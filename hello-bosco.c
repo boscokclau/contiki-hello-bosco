@@ -46,8 +46,9 @@
 			every 3 seconds
 
 	Notes:
-		4.1 Counter needs to be outside as a new thread is being created when 
-		    an event occurs in the system. See sys/process.h for further detail.
+		4.1 Counter needs to be outside as the PROCESS_THREAD defines the
+		    body of a Protothread, which does not save states of automatic
+		    variables across blocked WAITs. See sys/process.h for further detail.
 ===========================================================================*/
 
 PROCESS(hello_bosco_process, "Hello Bosco Process");			// Step 2
